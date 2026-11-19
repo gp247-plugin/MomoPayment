@@ -14,7 +14,7 @@ VISA/Master/JCB カード。購入者は MoMo のページで支払ってスト�
 | **プラグイン** | MomoPayment |
 | **バージョン** | 1.0.0 |
 | **開発** | GP247 |
-| **ライセンス** | 無料 |
+| **ライセンス** | 無料 · オープンソース（[MIT](./LICENSE)） |
 | **要件** | GP247 Core **3.15+** · パッケージ `gp247/shop` · 有効な通貨 **VND** |
 | **不要** | 追加の Composer パッケージ、cron、キュー |
 
@@ -91,6 +91,18 @@ VND で注文し、MoMo を選びます。MoMo のページで ATM カードま�
 - **通貨**：MoMo は **VND** のみ対応です。他の通貨の注文では MoMo を開けず、購入者に別の方法を選ぶよう案内します。
 - MoMo の受領額が注文合計と異なる場合（まれ）、MoMo の受領額をメモ付きで記録し、注文ステータスは確認のためそのままにします。
 - プラグインをアンインストールしても削除されるのは設定のみです。注文に記録済みの入金・返金は残ります。
+
+## プラグイン設計に使用した MoMo 公式資料
+
+バージョン 1.0.0 は、以下の公式資料のみに基づいて設計されています。MoMo が API を変更した場合は、これらの資料の新しい
+バージョンを表に記載したバージョンと比較し、プラグインに必要な更新を確認してください。
+
+| 公式資料 | バージョン / 日付 | プラグインでの用途 |
+| --- | --- | --- |
+| [公式サンプルコード `momo-wallet/payment`](https://github.com/momo-wallet/payment) — ファイル `php/config.json`、`php/PayMoMo/init_payment.php`、`ipn_momo.php`、`result.php`、`query_transaction.php` | Version 1.0.2 · コミット [`d4746c5`](https://github.com/momo-wallet/payment/commit/d4746c5d1cc21d4efc96b3ad24cd0e19244c1dbd)（2022-07-28）、フォルダ `php/PayMoMo` の最終更新 2022-07-22 | 支払い作成・結果の返却 / IPN・照会の HMAC-SHA256 署名のフィールド順、公開 Sandbox キー |
+| Sandbox `test-payment.momo.vn` の MoMo 決済 API：`/v2/gateway/api/create`、`/v2/gateway/api/query`、`/v2/gateway/api/refund` | API v2 · 2026-11-20 にテスト取引で確認 | 支払い作成・照会・返金の署名が MoMo に受け入れられることの確認（署名が誤っていると `11007 Invalid signature` が返る） |
+
+ドキュメントポータル developers.momo.vn（v3）はバージョン 1.0.0 の設計根拠には使用していません。次回の更新時に併せて照合してください。
 
 ## バージョン履歴
 

@@ -14,7 +14,7 @@ Khách thanh toán trên trang của MoMo rồi quay về cửa hàng — thông
 | **Plugin** | MomoPayment |
 | **Phiên bản** | 1.0.0 |
 | **Nhà phát triển** | GP247 |
-| **Giấy phép** | Miễn phí |
+| **Giấy phép** | Miễn phí · mã nguồn mở, [MIT](./LICENSE) |
 | **Yêu cầu** | GP247 Core **3.15+** · package `gp247/shop` · tiền tệ **VND** đang bật |
 | **Không cần** | Composer package mới, cron, queue |
 
@@ -91,6 +91,18 @@ hoàn trên cổng MoMo Business, MoMo **không** báo về website — hãy ghi
 - **Tiền tệ**: MoMo chỉ nhận **VND**. Đơn bằng tiền tệ khác sẽ không mở được MoMo; khách được mời chọn cách khác.
 - Số tiền MoMo thu khác tổng đơn (hiếm) được ghi đúng số MoMo thu kèm ghi chú, trạng thái đơn giữ nguyên để bạn kiểm tra.
 - Gỡ plugin chỉ xoá cấu hình của plugin; các khoản thu/hoàn đã ghi vào đơn vẫn giữ nguyên.
+
+## Tài liệu chính thức của MoMo dùng để thiết kế plugin
+
+Bản 1.0.0 được thiết kế dựa trên đúng các nguồn chính thức dưới đây. Khi MoMo thay đổi API, hãy so phiên bản mới của các
+nguồn này với phiên bản ghi trong bảng để biết plugin cần cập nhật gì.
+
+| Nguồn chính thức | Phiên bản / ngày | Plugin dựa vào để |
+| --- | --- | --- |
+| [Mã mẫu chính thức `momo-wallet/payment`](https://github.com/momo-wallet/payment) — các file `php/config.json`, `php/PayMoMo/init_payment.php`, `ipn_momo.php`, `result.php`, `query_transaction.php` | Version 1.0.2 · commit [`d4746c5`](https://github.com/momo-wallet/payment/commit/d4746c5d1cc21d4efc96b3ad24cd0e19244c1dbd) (28/07/2022); thư mục `php/PayMoMo` sửa lần cuối 22/07/2022 | Thứ tự trường khi ký HMAC-SHA256 cho tạo thanh toán, kết quả trả về / IPN và tra cứu; bộ khoá Sandbox công khai |
+| API thanh toán MoMo trên Sandbox `test-payment.momo.vn`: `/v2/gateway/api/create`, `/v2/gateway/api/query`, `/v2/gateway/api/refund` | API v2 · đối chiếu bằng giao dịch thử ngày 20/11/2026 | Xác nhận chữ ký tạo thanh toán, tra cứu và hoàn tiền được MoMo chấp nhận (ký sai thì MoMo trả `11007 Invalid signature`) |
+
+Cổng tài liệu developers.momo.vn (bản v3) không được dùng làm căn cứ cho bản 1.0.0; lần cập nhật sau nên đối chiếu thêm với nó.
 
 ## Lịch sử phiên bản
 

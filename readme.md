@@ -15,7 +15,7 @@ website.
 | **Plugin** | MomoPayment |
 | **Version** | 1.0.0 |
 | **Developer** | GP247 |
-| **License** | Free |
+| **License** | Free · open source, [MIT](./LICENSE) |
 | **Requires** | GP247 Core **3.15+** · package `gp247/shop` · an active **VND** currency |
 | **Does not need** | New Composer packages, cron, queue |
 
@@ -96,6 +96,18 @@ screen by hand.
 - If MoMo collects a different amount from the order total (rare), the amount MoMo took is recorded with a note and the
   order status is left for you to check.
 - Uninstalling the plugin only removes its settings; payments and refunds already recorded on orders stay.
+
+## MoMo official sources used to design the plugin
+
+Version 1.0.0 was designed on exactly the official sources below. When MoMo changes its API, compare the new version of
+these sources with the version recorded in the table to see what the plugin needs to update.
+
+| Official source | Version / date | What the plugin relies on it for |
+| --- | --- | --- |
+| [Official sample code `momo-wallet/payment`](https://github.com/momo-wallet/payment) — files `php/config.json`, `php/PayMoMo/init_payment.php`, `ipn_momo.php`, `result.php`, `query_transaction.php` | Version 1.0.2 · commit [`d4746c5`](https://github.com/momo-wallet/payment/commit/d4746c5d1cc21d4efc96b3ad24cd0e19244c1dbd) (2022-07-28); folder `php/PayMoMo` last changed 2022-07-22 | Field order of the HMAC-SHA256 signatures for create payment, the returned result / IPN and query; the public Sandbox keys |
+| MoMo payment API on the Sandbox `test-payment.momo.vn`: `/v2/gateway/api/create`, `/v2/gateway/api/query`, `/v2/gateway/api/refund` | API v2 · checked with test transactions on 2026-11-20 | Confirming that the create, query and refund signatures are accepted by MoMo (a wrong signature returns `11007 Invalid signature`) |
+
+The developers.momo.vn documentation portal (v3) was not used as a basis for version 1.0.0; the next update should also be checked against it.
 
 ## Version history
 
