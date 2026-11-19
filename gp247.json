@@ -1,0 +1,17 @@
+{
+    "name": "MoMo Payment",
+    "image": "images/momo.svg",
+    "auth": "GP247",
+    "email": "support@gp247.net",
+    "link": "https://gp247.net",
+    "configGroup": "Plugins",
+    "configCode": "Payment",
+    "configKey": "MomoPayment",
+    "version": "1.0.0",
+    "requireCore": ["3.15"],
+    "minUpdateFrom": "1.0.0",
+    "requireComposerPackages": ["gp247/shop"],
+    "requireGp247Extensions": [],
+    "requireLivewire": false,
+    "storeScope": "store"
+}
