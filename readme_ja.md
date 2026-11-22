@@ -2,7 +2,7 @@
 
 > 🌐 **言語:** [🇻🇳 Tiếng Việt](./readme_vi.md) · [🇬🇧 English](./readme.md) · 🇯🇵 日本語（現在）
 
-GP247/Shop のストアで **MoMo** による支払いを受け付けます：MoMo ウォレット、MoMo 後払い、ベトナム国内 ATM カード、
+S-Cart のストアで **MoMo** による支払いを受け付けます：MoMo ウォレット、MoMo 後払い、ベトナム国内 ATM カード、
 VISA/Master/JCB カード。購入者は MoMo のページで支払ってストアに戻ります。カード情報があなたのサイトを通ることはありません。
 
 ---

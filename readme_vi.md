@@ -2,7 +2,7 @@
 
 > 🌐 **Ngôn ngữ:** 🇻🇳 Tiếng Việt (hiện tại) · [🇬🇧 English](./readme.md) · [🇯🇵 日本語](./readme_ja.md)
 
-Nhận thanh toán qua **MoMo** cho cửa hàng GP247/Shop: Ví MoMo, Ví Trả Sau, thẻ ATM nội địa và thẻ VISA/Master/JCB.
+Nhận thanh toán qua **MoMo** cho cửa hàng S-Cart: Ví MoMo, Ví Trả Sau, thẻ ATM nội địa và thẻ VISA/Master/JCB.
 Khách thanh toán trên trang của MoMo rồi quay về cửa hàng — thông tin thẻ không đi qua website của bạn.
 
 ---

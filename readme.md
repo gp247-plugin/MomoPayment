@@ -2,7 +2,7 @@
 
 > 🌐 **Language:** [🇻🇳 Tiếng Việt](./readme_vi.md) · 🇬🇧 English (current) · [🇯🇵 日本語](./readme_ja.md)
 
-Accept payments through **MoMo** in a GP247/Shop store: the MoMo wallet, MoMo PayLater, Vietnamese ATM cards and
+Accept payments through **MoMo** in an S-Cart store: the MoMo wallet, MoMo PayLater, Vietnamese ATM cards and
 VISA/Master/JCB cards. Shoppers pay on MoMo's page and come back to the store — card details never pass through your
 website.
 
